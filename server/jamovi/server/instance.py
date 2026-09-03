@@ -248,6 +248,7 @@ class Instance:
             self._mm.close()
 
     def _close(self, clean=True):
+        log.debug('instance %s: connection closed (clean=%s)', self._instance_id, clean)
         self._coms.remove_close_listener(self._close)
         self._coms = None
         self._no_connection_unclean_disconnect = not clean

@@ -1039,6 +1039,7 @@ ready(async() => {
 
         instanceId = /\/([a-z0-9-]+)\/$/.exec(window.location.pathname)[1];
         await instance.connect(instanceId);
+        auth.beginSync();
 
         progNotif.dismiss();
     }
